@@ -1,0 +1,20 @@
+body{
+    background: #272330;
+}
+button{
+    background-color: rgb(136,6,206);
+    border: none;
+    margin: 20px;
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+    font-size: 40px;
+    font-family: Arial;
+    color: white;
+    padding: 5px;
+    text-align: center;   
+}
+#message{
+    color :rgb(6, 210, 210);
+    border-color: blue;
+}
