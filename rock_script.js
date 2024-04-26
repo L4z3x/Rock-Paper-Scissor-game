@@ -1,39 +1,32 @@
-let cmove = '';
-let result ='';
-let a;
-function rock(){
-    
-    if(cmove === 'Rock'){
-        result = 'Tie.';
-    }else if(cmove === 'Paper'){
-        result = 'You Lost.';
-    }else {
-        result = 'You Won.'
-    }
-    message.textContent= result;
-}
-function paper(){
-    if(playermove === 'paper'){
-        if(cmove === 'Rock'){
-            result = 'You Won.';
-        }else if(cmove === 'Paper'){
-            result = 'Tie.';
-        }else {
-            result = 'You Lost.'
+function play(playermove){
+    const compmove = pickmove();
+    let res = '';
+    if(playermove === 'Rock'){
+        if(compmove === 'Paper'){
+            res = 'You Won.';
+        }else if(compmove === 'Rock'){
+            res = 'Tie.';
+        }else{
+            res = 'You Lost.';
         }
-        message.textContent= result
-    }      
-            
-}
-function scissor(){
-    if(cmove === 'Rock'){
-        result = 'You Lost.';
-    }else if(cmove === 'Paper'){
-        result = 'You Won.';
-    }else {
-        result = 'Tie.'
+    }else if (playermove === 'Paper') {
+        if (compmove === 'Paper') {
+            res = 'Tie.';
+        }else if (compmove === 'Rock') {
+            res = 'You Won.';
+        } else {
+            res = 'You Lost.';
+        }
+    }else{
+        if (compmove === 'Scissor') {
+            res = 'Tie.';
+        }else if (compmove === 'Paper') {
+            res = 'You Lost.';
+        }else{
+            res = 'You Won.';
+        }
     }
-    message.textContent= result
+    message.textContent = res;
 }
 function pickmove(){
         const a = Math.random();
@@ -45,4 +38,5 @@ function pickmove(){
     }else if (a > 2/3 && a < 1){
          cmove = 'Scissor';
     }
+    return cmove;
 }

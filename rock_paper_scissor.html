@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js rock-paper-scisor</title>
-    <link rel="stylesheet" href="rock.css">
+    <link rel="stylesheet" href="rock_style.css">
 </head>
 <body>  
     
@@ -15,16 +15,13 @@
     <br>
     <center> 
         <button onclick=" 
-                pickmove();  
-                rock();
-            ">Rock</button>
+            play('Rock');
+         ">Rock</button>
         <button onclick=" 
-            pickmove();
-            paper();
+            play('Paper');
         ">Paper</button>
         <button onclick="  
-            pickmove();
-            scissor();
+            play('Scissor');
         ">Scissor</button>
     </center>
     <br>
