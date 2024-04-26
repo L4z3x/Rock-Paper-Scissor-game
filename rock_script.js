@@ -1,4 +1,11 @@
+let score = JSON.parse(localStorage.getItem('score')) || {
+    hum: 0,
+    com: 0
+};
+cpoint.textContent = 'Pc Score: '+ score.com;
+hpoint.textContent = 'Your Score: '+ score.hum;
 function play(playermove){
+    
     const compmove = pickmove();
     let res = '';
     if(playermove === 'Rock'){
@@ -26,6 +33,16 @@ function play(playermove){
             res = 'You Won.';
         }
     }
+    if (res === 'You Lost.'){
+        score.com += 1;
+    }
+    if(res === 'You Won.'){
+        score.hum += 1;
+    }
+    cpoint.textContent = 'Pc Score: '+ score.com;
+    hpoint.textContent = 'Your Score: '+ score.hum;
+    localStorage.setItem('score' ,JSON.stringify(score));
+
     message.textContent = res;
 }
 function pickmove(){

@@ -14,20 +14,29 @@
     <script src="rock_script.js"></script>
     <br>
     <center> 
-        <button onclick=" 
+        <button class="button" onclick="   
             play('Rock');
          ">Rock</button>
-        <button onclick=" 
+        <button class="button" onclick=" 
             play('Paper');
         ">Paper</button>
-        <button onclick="  
+        <button class="button" onclick="  
             play('Scissor');
         ">Scissor</button>
     </center>
     <br>
-    <center id='message'></center>
-    <center id= 'cpoints'></center>
-    <center id="hpoints"></center>
-
+    <center><button id='message' class="msg"></button></center>
+    <br>
+    <center>
+        <button id= 'cpoint' class="score"></button>
+        <button id='hpoint' class="score"></button>
+    </center>
+    <button class="reset" onclick="
+        score.com = 0;
+        score.hum = 0;  
+        cpoint.textContent = 'Pc Score: '+ score.com
+        hpoint.textContent = 'Your Score: '+ score.hum;
+        localStorage.removeItem('score');
+    ">Reset Score</button>
 </body>
 </html>

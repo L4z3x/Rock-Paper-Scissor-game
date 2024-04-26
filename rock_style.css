@@ -1,20 +1,42 @@
 body{
     background: #272330;
 }
-button{
+.button{
     background-color: rgb(136,6,206);
     border: none;
     margin: 20px;
     border-radius: 100px;
-    width: 200px;
-    height: 200px;
-    font-size: 40px;
+    width: 180px;
+    height: 180px;
+    font-size: 45px;
     font-family: Arial;
     color: white;
     padding: 5px;
     text-align: center;   
+    
 }
-#message{
-    color :rgb(6, 210, 210);
-    border-color: blue;
+.score{
+    font-size: 20px;
+    width: 150px;
+    height: fit-content;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+.msg{
+    font-size: 20px;
+    width: 100px;
+    animation: fadeIn 2s;
+    margin-bottom: 20px;
+    
+}
+@keyframes fadeIn{
+    0% {opacity: 0;}
+    50% {opacity: 5;}
+    100% {opacity: 0;}
+}
+.reset{
+    width: fit-content;
+    height: 60px;
+
 }
