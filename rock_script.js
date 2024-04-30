@@ -1,9 +1,8 @@
-let score = JSON.parse(localStorage.getItem('score')) || {
+let score = {
     hum: 0,
     com: 0
 };
-cpoint.textContent = 'Pc Score: '+ score.com;
-hpoint.textContent = 'Your Score: '+ score.hum;
+
 function play(playermove){
     
     const compmove = pickmove();
@@ -25,7 +24,7 @@ function play(playermove){
             res = 'You Lost.';
         }
     }else{
-        if (compmove === 'Scissor') {
+        if (compmove === 'Scissor'){
             res = 'Tie.';
         }else if (compmove === 'Paper') {
             res = 'You Lost.';
@@ -39,11 +38,9 @@ function play(playermove){
     if(res === 'You Won.'){
         score.hum += 1;
     }
-    cpoint.textContent = 'Pc Score: '+ score.com;
-    hpoint.textContent = 'Your Score: '+ score.hum;
-    localStorage.setItem('score' ,JSON.stringify(score));
-
-    message.textContent = res;
+    document.querySelector('.js-cscore').innerHTML = 'Pc Score: '+ score.com;
+    document.querySelector('.js-hscore').innerHTML = 'Your Score: '+ score.hum;
+    document.querySelector('.js-msg').innerHTML = res ;
 }
 function pickmove(){
         const a = Math.random();

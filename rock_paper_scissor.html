@@ -3,40 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>js rock-paper-scisor</title>
+    <title>rock-paper-scisor</title>
     <link rel="stylesheet" href="rock_style.css">
 </head>
 <body>  
     
     <center>
-        <h2 style="color:aqua; font-size: 50px;">Rock-Paper-Scissor Game</h2>
+        <h2 style="color:aqua; font-size: 50px;">Time to play a Game</h2>
     </center>
     <script src="rock_script.js"></script>
     <br>
     <center> 
         <button class="button" onclick="   
             play('Rock');
-         ">Rock</button>
+         "><img src="images/rock-emoji.png"></button>
         <button class="button" onclick=" 
             play('Paper');
-        ">Paper</button>
+        "><img src="images/paper-emoji.png"></button>
         <button class="button" onclick="  
             play('Scissor');
-        ">Scissor</button>
+        "><img src="images/scissors-emoji.png"></button>
     </center>
-    <br>
-    <center><button id='message' class="msg"></button></center>
-    <br>
     <center>
-        <button id= 'cpoint' class="score"></button>
-        <button id='hpoint' class="score"></button>
+    <div class="js-msg"><span>let's see</span></div>
+    <div class=""> </div>
+    
+    <div class="js-cscore"><span>Pc Score: 0</span></div>
+    <div class="js-hscore"><span>Your Score: 0</span></div>
     </center>
-    <button class="reset" onclick="
-        score.com = 0;
-        score.hum = 0;  
-        cpoint.textContent = 'Pc Score: '+ score.com
-        hpoint.textContent = 'Your Score: '+ score.hum;
-        localStorage.removeItem('score');
-    ">Reset Score</button>
+    <center>
+        <button class="reset" onclick="
+            score.com = 0;
+            score.hum = 0;  
+            document.querySelector('.js-cscore').innerHTML = 'Pc Score: '+ score.com;
+            document.querySelector('.js-hscore').innerHTML = 'Your Score: '+ score.hum;
+            document.querySelector('.js-msg').innerHTML = 'lets see';
+            localStorage.removeItem('score');
+        ">Reset Score</button>  
+    </center>
+    
+   
 </body>
 </html>
