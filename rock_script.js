@@ -98,8 +98,9 @@ function pickmove(){
 function reset(){
     score.com = 0;
     score.hum = 0;  
-    playground = 0;
-    document.querySelector('.js-cscore').innerHTML = `Pc Score: ${score.com}`;
-    document.querySelector('.js-cscore').innerHTML = `Your Score: ${score.hom}`;
+    console.log(score.com);
+    console.log(score.hum);
+    document.querySelector('.js-cscore').innerHTML = `Pc Score: 0`;
+    document.querySelector('.js-cscore').innerHTML = `Your Score: 0`;
     document.querySelector('.js-msg').innerHTML = 'lets see';
 }
