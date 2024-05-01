@@ -2,42 +2,83 @@ let score = {
     hum: 0,
     com: 0
 };
-
+let playround = 0;
+let msg = '';
+function maxround(){
+    if (playround == 5) {
+        window.location.href = 'resault.html';
+        if(score.com > score.hum){
+            msg = 'Defeat... You Lost against the computer';
+        }else{
+            if(score.com == score.hum){
+                msg = 'Draw... you were close';
+            }else{
+                msg = 'Victory... you won against the computer'
+            }
+        }
+        fetch('resault.html')
+        .then(response => response.text())
+        .then(html => {
+            // Parse the HTML content
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            // Access elements in the loaded content
+            doc.querySelector('.Res').innerHTML = `<span>${msg}</span>`;
+            doc.querySelector('.cRes').innerHTML = `Pc Score: ${score.com};`;
+            doc.querySelector('.hRes').innerHTML = `Your Score: ${score.hum}`;
+            console.log(doc.querySelector('.Res').innerHTML)
+            // Do something with the element
+        });
+    
+    
+        /*document.querySelector('.Res').innerHTML = `<span>${msg}</span>`;
+        document.querySelector('.cRes').innerHTML = `Pc Score: ${score.com}`;
+        document.querySelector('.hRes').innerHTML = `Your Score: ${score.hum}`;*/
+        reset();        
+    }    
+    }
+    
 function play(playermove){
     
     const compmove = pickmove();
+    const cImg = compmove ;
+    const hImg = playermove;
     let res = '';
     if(playermove === 'Rock'){
         if(compmove === 'Paper'){
-            res = 'You Won.';
+            res = 'You Lost';
         }else if(compmove === 'Rock'){
-            res = 'Tie.';
+            res = 'Tie';
         }else{
-            res = 'You Lost.';
+            res = 'You Won';
         }
     }else if (playermove === 'Paper') {
         if (compmove === 'Paper') {
-            res = 'Tie.';
+            res = 'Tie';
         }else if (compmove === 'Rock') {
-            res = 'You Won.';
+            res = 'You Lost';
         } else {
-            res = 'You Lost.';
+            res = 'You Won';
         }
     }else{
         if (compmove === 'Scissor'){
-            res = 'Tie.';
+            res = 'Tie';
         }else if (compmove === 'Paper') {
-            res = 'You Lost.';
+            res = 'You Won';
         }else{
-            res = 'You Won.';
+            res = 'You Lost';
         }
     }
-    if (res === 'You Lost.'){
+    if (res === 'You Lost'){
         score.com += 1;
     }
-    if(res === 'You Won.'){
+    if(res === 'You Won'){
         score.hum += 1;
     }
+    playround += 1;
+
+    document.querySelector('.js-hmove').innerHTML = `<img style="margin-left: 20px;" src="assets/images/${hImg}-emoji.png"><span>Your move</span>`;
+    document.querySelector('.js-cmove').innerHTML = `<img style="margin-left: 20px;" src="assets/images/${cImg}-emoji.png"><span>Pc move</span>`;
     document.querySelector('.js-cscore').innerHTML = 'Pc Score: '+ score.com;
     document.querySelector('.js-hscore').innerHTML = 'Your Score: '+ score.hum;
     document.querySelector('.js-msg').innerHTML = res ;
@@ -53,4 +94,12 @@ function pickmove(){
          cmove = 'Scissor';
     }
     return cmove;
+}
+function reset(){
+    score.com = 0;
+    score.hum = 0;  
+    playground = 0;
+    document.querySelector('.js-cscore').innerHTML = `Pc Score: ${score.com}`;
+    document.querySelector('.js-cscore').innerHTML = `Your Score: ${score.hom}`;
+    document.querySelector('.js-msg').innerHTML = 'lets see';
 }

@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'fredoka-medium';
+    src: url('assets/fonts/Fredoka-Medium.woff2') format('woff2');
+}
 body{
     background: #272330;
 }
@@ -9,7 +13,6 @@ body{
     width: 120px;
     height: 120px;
     font-size: 45px;
-    font-family: Arial;
     color: white;
     padding: 5px;
     text-align: center;   
@@ -23,8 +26,7 @@ body{
     margin: 10px ;
     border-radius: 25px;
     padding: 5px 5px;
-    /*margin-right: 30px;*/
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'fredoka-medium';
     text-align: center;
     font-weight: bold;
     background-color: #29bffa;
@@ -38,7 +40,7 @@ body{
     padding: 5px 5px;
     border-radius: 25px;
     display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'fredoka-medium';
     font-weight: bold;
     text-align: center;
     background-color: #29bffa;
@@ -48,7 +50,7 @@ body{
     width: 100px;
     height: 25px;
     border-radius: 10px;
-    font-family: Arial;
+    font-family: 'fredoka-medium';
     text-align: center;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -69,8 +71,8 @@ body{
     background-color: rgb(207, 191, 15);
     border: none;
     margin-top: 10px;
-    border-radius: 5px; 
-    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px; 
+    font-family: 'fredoka-medium';
     text-align: center;
 }
 
@@ -78,3 +80,44 @@ img{
    
     height: 80px;
 }
+.title{
+    color:rgb(248, 121, 10);
+    font-size: 60px;
+    margin-bottom: 30px;
+    font-family: 'fredoka-medium','sans-serif';
+}
+.js-hmove{
+    color:rgb(248, 121, 10);
+    display: inline-block;
+    font-family: 'fredoka-medium';
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 20px;
+    text-align: center;
+}
+.js-cmove{
+    color:rgb(248, 121, 10);
+    display: inline-block;
+    font-family: 'fredoka-medium';
+    font-weight: bold;
+    margin-left: 20px;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 15px;
+}
+.js-cmove span{
+    display: block; 
+    margin-top: 15px;
+}
+.js-cmove img{
+    display: block; 
+}
+.js-hmove span{
+    display: block; 
+    margin-top: 15px;
+}
+.js-hmove img{
+    display: block; 
+}
+
+
