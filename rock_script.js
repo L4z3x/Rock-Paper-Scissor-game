@@ -98,9 +98,9 @@ function pickmove(){
 function reset(){
     score.com = 0;
     score.hum = 0;  
-    console.log(score.com);
-    console.log(score.hum);
-    document.querySelector('.js-cscore').innerHTML = `Pc Score: 0`;
-    document.querySelector('.js-cscore').innerHTML = `Your Score: 0`;
-    document.querySelector('.js-msg').innerHTML = 'lets see';
+    document.querySelector('.js-cscore').innerHTML = `Pc score: 0`;
+    document.querySelector('.js-hscore').innerHTML = `Your Score: 0`;
+    document.querySelector('.js-msg').innerHTML = `lets see`;
+    document.querySelector('.js-hmove').innerHTML = ``;
+    document.querySelector('.js-cmove').innerHTML = ``;
 }
