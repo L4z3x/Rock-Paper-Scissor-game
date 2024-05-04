@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rock-paper-scisor</title>
-    <link rel="stylesheet" href="rock_style.css">
-    <script src="rock_script.js"></script>    
+    <link rel="stylesheet" href="rock_style.css">    
 </head>
 <body>  
     
@@ -13,15 +12,15 @@
         <h2 class="title">Time to play a Game</h2>
     </center>  
     <center> 
-        <button class="button" onclick="   
-            play('Rock');
-         "><img src="assets/images/Rock-emoji.png"></button>
-        <button class="button" onclick=" 
-            play('Paper');
-        "><img src="assets/images/Paper-emoji.png"></button>
-        <button class="button" onclick="  
-            play('Scissor');          
-        "><img src="assets/images/Scissor-emoji.png"></button>
+        <button class="button Rock">
+            <img src="assets/images/Rock-emoji.png">
+        </button>
+        <button class="button Paper">
+            <img src="assets/images/Paper-emoji.png">
+        </button>
+        <button class="button Scissor">
+            <img src="assets/images/Scissor-emoji.png">
+        </button>
     </center>
     <center>
     <div class="js-hmove"></div>
@@ -31,11 +30,8 @@
     <div class="js-cscore"><span>Pc Score: 0</span></div>
     </center>
     <center>
-        <button class="reset" onclick="
-            reset();
-        ">Reset Score</button>  
+        <button class="reset">Reset Score</button>  
     </center>
-    
-   
+    <script src="rock_script.js"></script>
 </body>
 </html>

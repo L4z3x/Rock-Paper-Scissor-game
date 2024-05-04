@@ -1,3 +1,16 @@
+document.querySelector('.Rock').addEventListener('click',()=>{
+    play('Rock');
+});
+document.querySelector('.Paper').addEventListener('click',()=>{
+    play('Paper');
+});
+document.querySelector('.Scissor').addEventListener('click',()=>{
+    play('Scissor');
+});
+document.querySelector('.reset').addEventListener('click',()=>{
+    reset();
+})
+let cmove =''
 let score = {
     hum: 0,
     com: 0
