@@ -1,15 +1,7 @@
-document.querySelector('.Rock').addEventListener('click',()=>{
-    play('Rock');
-});
-document.querySelector('.Paper').addEventListener('click',()=>{
-    play('Paper');
-});
-document.querySelector('.Scissor').addEventListener('click',()=>{
-    play('Scissor');
-});
-document.querySelector('.reset').addEventListener('click',()=>{
-    reset();
-})
+
+const center_but = document.getElementById('buttons-center');
+const play_again_div = document.getElementById('play-again-div');
+const reset_div = document.getElementById('reset-div');
 let cmove =''
 let score = {
     hum: 0,
@@ -29,24 +21,6 @@ function maxround(){
                 msg = 'Victory... you won against the computer'
             }
         }
-        fetch('resault.html')
-        .then(response => response.text())
-        .then(html => {
-            // Parse the HTML content
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            // Access elements in the loaded content
-            doc.querySelector('.Res').innerHTML = `<span>${msg}</span>`;
-            doc.querySelector('.cRes').innerHTML = `Pc Score: ${score.com};`;
-            doc.querySelector('.hRes').innerHTML = `Your Score: ${score.hum}`;
-            console.log(doc.querySelector('.Res').innerHTML)
-            // Do something with the element
-        });
-    
-    
-        /*document.querySelector('.Res').innerHTML = `<span>${msg}</span>`;
-        document.querySelector('.cRes').innerHTML = `Pc Score: ${score.com}`;
-        document.querySelector('.hRes').innerHTML = `Your Score: ${score.hum}`;*/
         reset();        
     }    
     }
@@ -89,6 +63,10 @@ function play(playermove){
         score.hum += 1;
     }
     playround += 1;
+    remove_buttons(center_but);
+    play_again_div.innerHTML = `<button class="play-again-but">Play again</button>`;
+    reset_div.innerHTML= `<button class="reset" onclick="reset()">Reset Game</button> `;
+   
 
     document.querySelector('.js-hmove').innerHTML = `<img style="margin-left: 20px;" src="assets/images/${hImg}-emoji.png"><span>Your move</span>`;
     document.querySelector('.js-cmove').innerHTML = `<img style="margin-left: 20px;" src="assets/images/${cImg}-emoji.png"><span>Pc move</span>`;
@@ -113,7 +91,34 @@ function reset(){
     score.hum = 0;  
     document.querySelector('.js-cscore').innerHTML = `Pc score: 0`;
     document.querySelector('.js-hscore').innerHTML = `Your Score: 0`;
-    document.querySelector('.js-msg').innerHTML = `lets see`;
-    document.querySelector('.js-hmove').innerHTML = ``;
-    document.querySelector('.js-cmove').innerHTML = ``;
+    retreive_buttons(); 
+}
+document.getElementById('play-again-div').addEventListener('click',()=>{
+    retreive_buttons(center_but)    
+})
+function remove_buttons(center_but){
+    if (center_but) {
+        center_but.innerHTML=''
+    }
+}
+function retreive_buttons(){
+    if(center_but.innerHTML===''){
+        center_but.innerHTML = `
+        <button class="button Rock" onclick="play('Rock')">
+            <img src="assets/images/Rock-emoji.png">
+        </button>
+        <button class="button Paper" onclick="play('Paper')">
+            <img src="assets/images/Paper-emoji.png">
+        </button>
+        <button class="button Scissor" onclick="play('Scissor')">
+            <img src="assets/images/Scissor-emoji.png">
+        </button>`
+        document.querySelector('.js-hmove').innerHTML = ``;
+        document.querySelector('.js-cmove').innerHTML = ``;
+        play_again_div.innerHTML = '';
+        reset_div.innerHTML = '';
+        document.querySelector('.js-msg').innerHTML = `lets see`;
+
+
+    }
 }

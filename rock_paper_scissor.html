@@ -10,15 +10,17 @@
     
     <center>
         <h2 class="title">Time to play a Game</h2>
+        <div class="js-hscore"><span>Your Score: 0</span></div>
+        <div class="js-cscore"><span>Pc Score: 0</span></div>
     </center>  
-    <center> 
-        <button class="button Rock">
+    <center id="buttons-center">    
+        <button class="button Rock" onclick="play('Rock')">
             <img src="assets/images/Rock-emoji.png">
         </button>
-        <button class="button Paper">
+        <button class="button Paper" onclick="play('Paper')">
             <img src="assets/images/Paper-emoji.png">
         </button>
-        <button class="button Scissor">
+        <button class="button Scissor" onclick="play('Scissor')">
             <img src="assets/images/Scissor-emoji.png">
         </button>
     </center>
@@ -26,11 +28,8 @@
     <div class="js-hmove"></div>
     <div class="js-cmove"></div>
     <div class="js-msg"><span>let's see</span></div>
-    <div class="js-hscore"><span>Your Score: 0</span></div>
-    <div class="js-cscore"><span>Pc Score: 0</span></div>
-    </center>
-    <center>
-        <button class="reset">Reset Score</button>  
+    <div id="play-again-div"></div>
+    <div id="reset-div"></div> 
     </center>
     <script src="rock_script.js"></script>
 </body>
