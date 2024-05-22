@@ -79,8 +79,8 @@ function play(playermove){
     reset_div.classList.add('reset-div')
 
 
-    document.querySelector('.js-hmove').innerHTML = `<img style="margin-left: 20px;" src="assets/images/${hImg}-emoji.png"><span>Your move</span>`;
-    document.querySelector('.js-cmove').innerHTML = `<img style="margin-left: 20px;" src="assets/images/${cImg}-emoji.png"><span>Pc move</span>`;
+    document.querySelector('.js-hmove').innerHTML = `<img style="margin-left: 23px;" src="assets/images/${hImg}-emoji.png"><span>Your move</span>`;
+    document.querySelector('.js-cmove').innerHTML = `<img style="margin-left: 17px;" src="assets/images/${cImg}-emoji.png"><span>Pc move</span>`;
     document.querySelector('.js-cscore').innerHTML = 'Pc Score: '+ score.com;
     document.querySelector('.js-hscore').innerHTML = 'Your Score: '+ score.hum;
     
