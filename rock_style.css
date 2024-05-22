@@ -9,6 +9,7 @@ body{
     background-color: rgb(56, 56, 175);
     border: none;
     margin: 20px;
+    margin-bottom: 0px;
     border-radius: 100px;
     width: 120px;
     height: 120px;
@@ -19,26 +20,29 @@ body{
     
 }
 .js-cscore{
-    font-size: 20px;
+    font-size: 23px;
     display: inline-block;
-    width: 150px;
+    width: 170px;
     height: fit-content;
-    margin: 10px ;
-    border-radius: 25px;
-    padding: 5px 5px;
+    margin: 20px ;
+    margin-bottom: 40px;
+    margin-left: 50px;
+    border-radius: 15px;
+    padding: 8px;
     font-family: 'fredoka-medium';
     text-align: center;
     font-weight: bold;
     background-color: #29bffa;
-    margin: 10px 10px;
 }
 .js-hscore{
-    font-size: 20px;
-    width: 160px;
+    font-size: 23px;
+    width: 170px;
     height: fit-content;
-    margin: 10px;
-    padding: 5px 5px;
-    border-radius: 25px;
+    margin: 20px;
+    margin-bottom: 40px;
+    margin-right: 50px;
+    padding: 8px;
+    border-radius: 15px;
     display: inline-block;
     font-family: 'fredoka-medium';
     font-weight: bold;
@@ -46,36 +50,21 @@ body{
     background-color: #29bffa;
 }
 .js-msg{
-    font-size: 19px;
-    width: 100px;
-    height: 25px;
+    margin: 20px;
+    font-size: 23px;
+    width: 150px;
+    height: fit-content;
     border-radius: 10px;
     font-family: 'fredoka-medium';
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    padding: 5px 8px;
-    text-align: center;
+    padding: 10px;
+    margin-bottom: 40px;
+    margin-top: 30px;
     font-weight: bold;
-    padding-left: 10px;
-    padding-right: 10px;
     color: black;
     background-color: rgb(248, 121, 10);
          
 }
-.reset{
-    width:  105px;
-    font-weight: bold;
-    font-size: 15px;
-    height: 40px;
-    background-color: rgb(207, 191, 15);
-    border: none;
-    margin-top: 10px;
-    border-radius: 20px; 
-    font-family: 'fredoka-medium';
-    text-align: center;
-}
-
 img{
    
     height: 80px;
@@ -93,6 +82,7 @@ img{
     font-size: 30px;
     font-weight: bold;
     margin-right: 20px;
+    margin-bottom: 20px;
     text-align: center;
 }
 .js-cmove{
@@ -104,6 +94,7 @@ img{
     text-align: center;
     font-size: 30px;
     margin-top: 15px;
+    margin-bottom: 20px;
 }
 .js-cmove span{
     display: block; 
@@ -119,5 +110,35 @@ img{
 .js-hmove img{
     display: block; 
 }
-
-
+.play-again-but{
+    width:  170px;
+    font-weight: bold;
+    font-size: 23px;
+    height: 45px;
+    background-color: rgb(207, 191, 15);
+    border: none;
+    margin-top: 10px;
+    border-radius: 7px; 
+    font-family: 'fredoka-medium';
+    text-align: center;
+}
+.reset{
+    width:  170px;
+    font-weight: bold;
+    font-size: 23px;
+    height: 45px;
+    background-color: rgb(207, 191, 15);
+    border: none;
+    margin-top: 10px;
+    border-radius: 7px; 
+    font-family: 'fredoka-medium';
+    text-align: center;
+}
+.reset-div{
+    display: inline-block;
+    margin-left: 15px;
+}
+.play-again-div{
+    display: inline-block;
+    margin-right: 15px;
+}

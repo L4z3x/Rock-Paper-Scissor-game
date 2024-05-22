@@ -34,26 +34,35 @@ function play(playermove){
     if(playermove === 'Rock'){
         if(compmove === 'Paper'){
             res = 'You Lost';
+            document.querySelector('.js-msg').style.backgroundColor = 'red';
         }else if(compmove === 'Rock'){
             res = 'Tie';
+            document.querySelector('.js-msg').style.backgroundColor = 'grey';
         }else{
             res = 'You Won';
+            document.querySelector('.js-msg').style.backgroundColor = 'green';
         }
     }else if (playermove === 'Paper') {
         if (compmove === 'Paper') {
             res = 'Tie';
+            document.querySelector('.js-msg').style.backgroundColor = 'grey';
         }else if (compmove === 'Rock') {
             res = 'You Lost';
+            document.querySelector('.js-msg').style.backgroundColor = 'red';
         } else {
             res = 'You Won';
+            document.querySelector('.js-msg').style.backgroundColor = 'green';
         }
     }else{
         if (compmove === 'Scissor'){
             res = 'Tie';
+            document.querySelector('.js-msg').style.backgroundColor = 'grey';
         }else if (compmove === 'Paper') {
             res = 'You Won';
+            document.querySelector('.js-msg').style.backgroundColor = 'green';
         }else{
             res = 'You Lost';
+            document.querySelector('.js-msg').style.backgroundColor = 'red';
         }
     }
     if (res === 'You Lost'){
@@ -66,12 +75,15 @@ function play(playermove){
     remove_buttons(center_but);
     play_again_div.innerHTML = `<button class="play-again-but">Play again</button>`;
     reset_div.innerHTML= `<button class="reset" onclick="reset()">Reset Game</button> `;
-   
+    play_again_div.classList.add('play-again-div')
+    reset_div.classList.add('reset-div')
+
 
     document.querySelector('.js-hmove').innerHTML = `<img style="margin-left: 20px;" src="assets/images/${hImg}-emoji.png"><span>Your move</span>`;
     document.querySelector('.js-cmove').innerHTML = `<img style="margin-left: 20px;" src="assets/images/${cImg}-emoji.png"><span>Pc move</span>`;
     document.querySelector('.js-cscore').innerHTML = 'Pc Score: '+ score.com;
     document.querySelector('.js-hscore').innerHTML = 'Your Score: '+ score.hum;
+    
     document.querySelector('.js-msg').innerHTML = res ;
 }
 function pickmove(){
@@ -118,7 +130,7 @@ function retreive_buttons(){
         play_again_div.innerHTML = '';
         reset_div.innerHTML = '';
         document.querySelector('.js-msg').innerHTML = `lets see`;
-
+        document.querySelector('.js-msg').style.backgroundColor = 'rgb(248, 121, 10)';
 
     }
 }
