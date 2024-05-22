@@ -19,7 +19,7 @@
     }
     .js-cscore{
         font-size: 18px;
-        width: 130px;
+        width: 115px;
         height: fit-content;
         margin: 20px;
         margin-bottom: 40px;
@@ -34,7 +34,7 @@
     }
     .js-hscore{
         font-size: 18px;
-        width: 130px;
+        width: 115px;
         height: fit-content;
         margin: 20px;
         margin-bottom: 40px;
@@ -95,7 +95,7 @@
     }
     .title{
         color:rgb(248, 121, 10);
-        font-size: 40px;
+        font-size: 35px;
         margin-bottom: 30px;
         font-family: 'fredoka-medium','sans-serif';
     }
