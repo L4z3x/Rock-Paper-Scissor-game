@@ -1,4 +1,19 @@
+    const backgroundDiv = document.createElement("div")
 
+fetch("https://api.unsplash.com/photos/random?client_id=bbnxPabn9GDBoJAa-u-aLVRDCp0YHmGqaD3WH4qPUo0&topics=6sMVjTLSkeQ&orientation=landscape")
+    .then (function(response){
+        return response.json()
+    })
+    .then(function(data){
+        const src = data.urls.regular
+        console.log(data)
+        backgroundDiv.classList.add('background')
+        backgroundDiv.style.backgroundImage = `url('${src}')`
+        document.body.appendChild(backgroundDiv)
+    })
+
+const win_bg = document.querySelector('.window-background')
+    win_bg.innerHTML=''
 const center_but = document.getElementById('buttons-center');
 const play_again_div = document.getElementById('play-again-div');
 const reset_div = document.getElementById('reset-div');
@@ -7,30 +22,25 @@ let score = {
     hum: 0,
     com: 0
 };
-let playround = 0;
 let msg = '';
-function maxround(){
-    if (playround == 5) {
-        window.location.href = 'resault.html';
-        if(score.com > score.hum){
-            msg = 'Defeat... You Lost against the computer';
-        }else{
-            if(score.com == score.hum){
-                msg = 'Draw... you were close';
-            }else{
-                msg = 'Victory... you won against the computer'
-            }
-        }
-        reset();        
-    }    
-    }
-    
 function play(playermove){
-    
-    const compmove = pickmove();
-    const cImg = compmove ;
-    const hImg = playermove;
-    let res = '';
+    if(!backgroundDiv.style.backgroundImage){
+        if(win_bg.innerHTML===''){
+            const waitWin = document.createElement("div")
+            const rem_but = document.createElement("div")
+            rem_but.classList.add('remove-window-but')
+            rem_but.innerHTML = `<img class="close-img"  onclick="removeWin()"src=/assets/images/close-window.png>`
+            waitWin.appendChild(rem_but)
+            waitWin.classList.add('wait-div')
+            waitWin.innerHTML += '<p class="win-msg">Oppps ... Please wait til the photo is fetched so you can enjoy the game 😅 😅</p>'
+            win_bg.appendChild(waitWin)
+            win_bg.style.display = 'flex'
+        }
+    }else{
+        const compmove = pickmove();
+        const cImg = compmove ;
+        const hImg = playermove;
+        let res = '';
     if(playermove === 'Rock'){
         if(compmove === 'Paper'){
             res = 'You Lost';
@@ -71,7 +81,6 @@ function play(playermove){
     if(res === 'You Won'){
         score.hum += 1;
     }
-    playround += 1;
     remove_buttons(center_but);
     play_again_div.innerHTML = `<button class="play-again-but">Play again</button>`;
     reset_div.innerHTML= `<button class="reset" onclick="reset()">Reset Game</button> `;
@@ -85,7 +94,9 @@ function play(playermove){
     document.querySelector('.js-hscore').innerHTML = 'Your Score: '+ score.hum;
     
     document.querySelector('.js-msg').innerHTML = res ;
+    }
 }
+    
 function pickmove(){
         const a = Math.random();
     if(a > 0 && a < 1/3 ){
@@ -134,3 +145,9 @@ function retreive_buttons(){
 
     }
 }
+function removeWin(){
+    win_bg.innerHTML = '' 
+    win_bg.style.display= 'none'  
+    console.log("window cleared") 
+}
+    
