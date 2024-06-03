@@ -158,15 +158,15 @@ function displayInfo(){
     const showDiv = document.createElement("div")
     showDiv.classList.add('show-div')
     showDiv.innerHTML =  `
-    <img class="info-img" src="/assets/images/Scissor-emoji.png">
-    <img class="info-img" src="/assets/images/sup.png">
-    <img class="info-img" src="/assets/images/Paper-emoji.png">
-    <img class="info-img" src="/assets/images/Rock-emoji.png">
-    <img class="info-img" src="/assets/images/sup.png">
-    <img class="info-img" src="/assets/images/Scissor-emoji.png">
-    <img class="info-img" src="/assets/images/Paper-emoji.png">
-    <img class="info-img" src="/assets/images/sup.png">
-    <img class="info-img" src="/assets/images/Rock-emoji.png">`
+    <img class="info-img" src="assets/images/Scissor-emoji.png">
+    <img class="info-img" src="assets/images/sup.png">
+    <img class="info-img" src="assets/images/Paper-emoji.png">
+    <img class="info-img" src="assets/images/Rock-emoji.png">
+    <img class="info-img" src="assets/images/sup.png">
+    <img class="info-img" src="assets/images/Scissor-emoji.png">
+    <img class="info-img" src="assets/images/Paper-emoji.png">
+    <img class="info-img" src="assets/images/sup.png">
+    <img class="info-img" src="assets/images/Rock-emoji.png">`
     infoWin.append(showDiv)
     win_bg.append(infoWin)
     win_bg.style.display = 'flex'
