@@ -152,7 +152,7 @@ function displayInfo(){
     const infoWin = document.createElement("div")
     const rem_but = document.createElement("div")
     rem_but.classList.add('remove-window-but')
-    rem_but.innerHTML = `<span class="info-title">How to play the game ?</span><img class="close-img"  onclick="removeinfo()" src="/assets/images/close-window.png">`
+    rem_but.innerHTML = `<span class="info-title">How to play the game ?</span><img class="close-img"  onclick="removeinfo()" src="assets/images/close-window.png">`
     infoWin.append(rem_but)
     infoWin.classList.add('info-div')
     const showDiv = document.createElement("div")
