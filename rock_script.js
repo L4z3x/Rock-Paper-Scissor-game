@@ -13,7 +13,6 @@ fetch("https://api.unsplash.com/photos/random?client_id=bbnxPabn9GDBoJAa-u-aLVRD
     })
 
 const win_bg = document.querySelector('.window-background')
-    win_bg.innerHTML=''
 const center_but = document.getElementById('buttons-center');
 const play_again_div = document.getElementById('play-again-div');
 const reset_div = document.getElementById('reset-div');
@@ -25,16 +24,8 @@ let score = {
 let msg = '';
 function play(playermove){
     if(!backgroundDiv.style.backgroundImage){
-        if(win_bg.innerHTML===''){
-            const waitWin = document.createElement("div")
-            const rem_but = document.createElement("div")
-            rem_but.classList.add('remove-window-but')
-            rem_but.innerHTML = `<img class="close-img"  onclick="removeWin()"src=/assets/images/close-window.png>`
-            waitWin.appendChild(rem_but)
-            waitWin.classList.add('wait-div')
-            waitWin.innerHTML += '<p class="win-msg">Oppps ... Please wait til the photo is fetched so you can enjoy the game 😅 😅</p>'
-            win_bg.appendChild(waitWin)
-            win_bg.style.display = 'flex'
+        if(win_bg.innerHTML==='' ){
+            displayWait() 
         }
     }else{
         const compmove = pickmove();
@@ -148,6 +139,46 @@ function retreive_buttons(){
 function removeWin(){
     win_bg.innerHTML = '' 
     win_bg.style.display= 'none'  
-    console.log("window cleared") 
 }
-    
+function removeinfo(){
+    win_bg.innerHTML = ''
+    win_bg.style.display = 'none'
+}
+document.body.addEventListener('DOMContentLoad',
+    displayInfo()
+)
+
+function displayInfo(){
+    const infoWin = document.createElement("div")
+    const rem_but = document.createElement("div")
+    rem_but.classList.add('remove-window-but')
+    rem_but.innerHTML = `<span class="info-title">How to play the game ?</span><img class="close-img"  onclick="removeinfo()" src="/assets/images/close-window.png">`
+    infoWin.append(rem_but)
+    infoWin.classList.add('info-div')
+    const showDiv = document.createElement("div")
+    showDiv.classList.add('show-div')
+    showDiv.innerHTML =  `
+    <img class="info-img" src="/assets/images/Scissor-emoji.png">
+    <img class="info-img" src="/assets/images/sup.png">
+    <img class="info-img" src="/assets/images/Paper-emoji.png">
+    <img class="info-img" src="/assets/images/Rock-emoji.png">
+    <img class="info-img" src="/assets/images/sup.png">
+    <img class="info-img" src="/assets/images/Scissor-emoji.png">
+    <img class="info-img" src="/assets/images/Paper-emoji.png">
+    <img class="info-img" src="/assets/images/sup.png">
+    <img class="info-img" src="/assets/images/Rock-emoji.png">`
+    infoWin.append(showDiv)
+    win_bg.append(infoWin)
+    win_bg.style.display = 'flex'
+}
+function displayWait(){
+    const waitWin = document.createElement("div")
+    const rem_but = document.createElement("div")
+    rem_but.classList.add('remove-window-but')
+    rem_but.innerHTML = `<img class="close-img"  onclick="removeWin()"src=/assets/images/close-window.png>`
+    waitWin.appendChild(rem_but)
+    waitWin.classList.add('wait-div')
+    waitWin.innerHTML += '<p class="win-msg">Oppps ... Please wait til the photo is fetched so you can enjoy the game 😅 😅</p>'
+    win_bg.appendChild(waitWin)
+    win_bg.style.display = 'flex'
+}
